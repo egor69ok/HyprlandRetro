@@ -57,6 +57,8 @@ yay -S --needed --noconfirm \
 echo "=== [5/6] Системные службы и Шрифты ==="
 yay -S --needed --noconfirm \
     ttf-jetbrains-mono-nerd \
+    otf-font-awesome \
+    noto-fonts-cjk \
     noto-fonts-emoji \
     bluez \
     bluez-utils \
