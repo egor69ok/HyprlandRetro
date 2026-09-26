@@ -1,0 +1,73 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 6,
+    "margin-left": 6,
+    "margin-right": 6,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock", "disk", "cpu", "temperature"],
+    "modules-right": ["network", "bluetooth", "pulseaudio", "battery"],
+
+    "hyprland/workspaces": {
+        "format": "{name}"
+    },
+    "clock": {
+        "format": "  {:%H:%M  |  %d.%m}"
+    },
+
+    // 💾 Модуль жесткого диска
+    "disk": {
+        "interval": 30,
+        "format": "   {percentage_used}%",
+        "path": "/"
+    },
+
+    // 🌡️ Модуль температуры процессора AMD Ryzen 7
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C",
+        "format-critical": " {temperatureC}°C"
+    },
+
+    // 🧠 Загрузка процессора (опционально, для информативности)
+    "cpu": {
+        "format": "  {usage}%",
+        "interval": 10
+    },
+
+    //   Wi-Fi (Клик правой кнопкой открывает nmtui)
+    "network": {
+        "format-wifi": "   {essid}",
+        "format-disconnected": "    No Wi-Fi",
+        // "on-click-right": "hyprctl dispatch exec 'kitty --class floating_tui -e nmtui'"
+        "on-click-right": "hyprctl dispatch exec 'kitty --class floating_tui -e nmtui'"
+    },
+
+    //  Bluetooth (Клик правой кнопкой открывает bluetui)
+    "bluetooth": {
+        "format": "  On",
+        "format-disabled": "    Off",
+        "format-connected": "  {device_alias}",
+        "on-click-right": "hyprctl dispatch exec 'kitty --class floating_tui -e bluetui'"
+    },
+
+    //  Звук (Клик правой кнопкой открывает микшер)
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "    Muted",
+        "format-icons": ["", "", ""],
+        "on-click-right": "hyprctl dispatch exec 'kitty --class floating_tui -e pulsemixer'"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    }
+}

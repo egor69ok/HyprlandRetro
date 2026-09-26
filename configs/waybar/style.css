@@ -1,0 +1,40 @@
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+    font-size: 13px;
+}
+
+window#waybar {
+    /* Скрипт заменит эти метки на реальные rgba-числа напрямую */
+    background: rgba(2, 3, 3, 0.85);
+    color: rgba(204, 201, 193, 1.0);
+    border-radius: 6px;
+    border: 1px solid rgba(75, 171, 68, 0.2);
+}
+
+.modules-left, .modules-center, .modules-right {
+    padding: 2px 10px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: rgba(204, 201, 193, 0.4);
+}
+
+#workspaces button.active {
+    color: rgba(45, 111, 113, 1.0);
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    color: #ff5555;
+}
+
+#clock, #network, #bluetooth, #pulseaudio, #battery {
+    padding: 0 10px;
+}
+
+#clock {
+    color: rgba(45, 111, 113, 1.0);
+    font-weight: bold;
+}
